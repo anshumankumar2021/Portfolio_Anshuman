@@ -476,6 +476,54 @@ body {
     border-color: var(--primary-color);
 }
 
+.btn-resume {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: var(--white);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-resume:hover::before {
+    left: 100%;
+}
+
+.btn-resume:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(238, 90, 36, 0.4);
+}
+
+.btn-resume i {
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-resume:hover i {
+    transform: translateY(2px);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 .social-links {
     display: flex;
     gap: 1.5rem;
@@ -1131,6 +1179,26 @@ section {
 .contact-form .btn {
     align-self: flex-start;
     margin-top: 1rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.resume-section {
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease 0.8s;
+}
+
+.about-content.animate .resume-section {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .form-group textarea {
